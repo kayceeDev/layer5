@@ -18,10 +18,7 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
         <Container>
           <Row>
             <Col xs={12} lg={8}>
-              <BlogViewToolTip isListView={isListView} setListView={setListView}
-                setGridView ={setGridView}
-              />
-              <Search data1={data.allMdx.nodes} pageContext={pageContext} isListView={isListView} />
+              <Search data1={data.allMdx.nodes} setGridView={setGridView} setListView={setListView} pageContext={pageContext} isListView={isListView} />
             </Col>
             <Col xs={12} lg={4}>
               <Sidebar/>
