@@ -8,6 +8,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
+import Search from "./js-search";
 
 const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => {
   return (
@@ -20,18 +21,7 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
               <BlogViewToolTip isListView={isListView} setListView={setListView}
                 setGridView ={setGridView}
               />
-              <div className="blog-grid-wrapper">
-                <Row>
-                  {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
-                    <Col key={id} xs={12} sm={6} >
-                      <Card frontmatter={frontmatter} fields={fields}/>
-                    </Col>
-                  ))}
-                  <Col>
-                    <Pager pageContext={pageContext} text={"Posts"} isListView={isListView}/>
-                  </Col>
-                </Row>
-              </div>
+              <Search data1={data.allMdx.nodes} pageContext={pageContext} isListView={isListView} />
             </Col>
             <Col xs={12} lg={4}>
               <Sidebar/>

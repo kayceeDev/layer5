@@ -17,3 +17,8 @@ export const BlogPageWrapper = styled.div`
         }
     }
 `;
+
+export const SearchBar = styled.div`
+
+
+`
